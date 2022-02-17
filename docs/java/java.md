@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Java
-nav_order: 32
+nav_order: 42
 has_children: true
 permalink: /docs/java
 ---
