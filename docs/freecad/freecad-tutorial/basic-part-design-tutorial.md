@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Базовый дизайн детали
-parent: FreaaCAD tutorial
+parent: FreeCAD tutorial
 grand_parent: FreeCAD
 nav_order: 5
 has_toc: false
