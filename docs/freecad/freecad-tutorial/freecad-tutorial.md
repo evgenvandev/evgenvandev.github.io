@@ -1,6 +1,6 @@
 ---
 layout: default
-title: FreaaCAD tutorial
+title: FreeCAD tutorial
 parent: FreeCAD
 nav_order: 5
 has_children: true
