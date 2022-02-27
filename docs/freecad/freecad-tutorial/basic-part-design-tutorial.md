@@ -21,5 +21,5 @@ has_toc: false
 
 Этот учебник не является полным и всеобъемлющим руководством по верстаку Part Design Workbench, и многие инструменты и возможности не рассматриваются. Этот учебник проведет пользователя через шаги, необходимые для моделирования детали, показанной на изображении ниже, с использованием эскизов.
 
-![Базовая деталь](/just-the-docs/assets/images/freecad/freecad-tutorial/freecad-tutorial-basic-part-design.jpg "Базовая деталь")
+![Базовая деталь]({{ site.url }}{{ site.baseurl }}/assets/images/freecad/freecad-tutorial/freecad-tutorial-basic-part-design.jpg "Базовая деталь")
 
