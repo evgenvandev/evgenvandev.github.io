@@ -28,7 +28,7 @@ or change entries in the database. The data inside the database is visualy shown
 Приложение Java, которое подключается к базе данных sqlite, с помощью которой можно вставлять, удалять 
 или изменять записи в базе данных. Данные внутри базы данных визуально отображаются в приложении.
 
-![DVDApplication-1](https://raw.githubusercontent.com/evgenvandev/just-the-docs/gh-pages/assets/images/java/java-sqlite/DVDApplication.png "DVDApplication-1")
+![DVDApplication-1]({{ site.url }}{{ site.baseurl }}/assets/images/java/java-sqlite/DVDApplication.png "DVDApplication-1")
 
 ---
 

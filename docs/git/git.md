@@ -50,7 +50,7 @@ Git сперва нужно установить. Способы зависят 
 
 После того, как все действия по установке завершены, убедимся, что Git появился в системе компьютера. Откройте терминал и введите `git --version`, должна появиться текущая версия программы на вашей машине. Эта проверка подходит для всех операционных систем.
 
-![Версия Git](/just-the-docs/assets/images/git/git-version-on-command-line.jpg "Версия Git, из командной строки")
+![Версия Git]({{ site.url }}{{ site.baseurl }}/assets/images/git/git-version-on-command-line.jpg "Версия Git, из командной строки")
 
 ## Настройка Git
 
@@ -71,7 +71,7 @@ Git сперва нужно установить. Способы зависят 
 
 1. Переходим на сайт [GitHub](https://github.com/).
 
-![Регистрация на Git](/just-the-docs/assets/images/git/index-site-github.jpg "Регистрация на Git")
+![Регистрация на Git]({{ site.url }}{{ site.baseurl }}/assets/images/git/index-site-github.jpg "Регистрация на Git")
 
 ## Устанавливаем SSH-ключи
 

@@ -12,7 +12,7 @@ permalink: /docs/freecad
 **FreeCAD** это универсальная параметрическая 3D САПР , чья разработка полностью базируется на принципах открытого исходного кода ([LGPL License](https://www.gnu.org/licenses/lgpl-3.0.en.html)).
 {: .fs-6 .fw-300 }
 
-![FreeCAD интерфейс](/just-the-docs/assets/images/freecad/freecad-1.jpg "FreeCAD интерфейс")
+![FreeCAD интерфейс]({{ site.url }}{{ site.baseurl }}/assets/images/freecad/freecad-1.jpg "FreeCAD интерфейс")
 
 ## Оглавление
 {: .no_toc .text-delta }

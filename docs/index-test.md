@@ -120,11 +120,11 @@ end
 
 ### Small image
 
-![](https://assets-cdn.github.com/images/icons/emoji/octocat.png)
+![]({{ site.url }}{{ site.baseurl }}/assets/images/octocat.png)
 
 ### Large image
 
-![](https://guides.github.com/activities/hello-world/branching.png)
+![]({{ site.url }}{{ site.baseurl }}/assets/images/branching.png)
 
 
 ### Definition lists can be used with HTML syntax.

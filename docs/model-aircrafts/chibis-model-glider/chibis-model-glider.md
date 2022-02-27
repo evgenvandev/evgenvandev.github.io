@@ -23,7 +23,7 @@ has_toc: false
 Эту модель планера специально сконструировал для начинающих авиамоделистов 
 чемпион мира А. Аверьянов. Она обладает высокими лётными качествами, а сделать её несложно.
 
-![Чертёж планера "Чибис"](/just-the-docs/assets/images/model-aircrafts-images/chibis-model-glider/Draw_planer_Chibis.jpg "Модель планера - Чибис")
+![Чертёж планера "Чибис"]({{ site.url }}{{ site.baseurl }}/assets/images/model-aircrafts-images/chibis-model-glider/Draw_planer_Chibis.jpg "Модель планера - Чибис")
 
 ---
 

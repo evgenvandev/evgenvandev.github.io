@@ -31,7 +31,7 @@ jekyll new test
 
 > New jekyll site installed in c:/C/2-Themes_Jekyll/tutorials_of_jekyll/example-1/test.
 
-![jekyll_new_test](/just-the-docs/assets/images/jekyll/example-jekyll/jekyll_new_test.jpg "jekyll_new_test")
+![jekyll_new_test]({{ site.url }}{{ site.baseurl }}/assets/images/jekyll/example-jekyll/jekyll_new_test.jpg "jekyll_new_test")
 
 Этот сайт уже готов к работе, так что можно прямо сейчас его запустить командой:
 
@@ -45,6 +45,6 @@ jekyll serve
 bundle exec jekyll serve
 ```
 
-![theme_minima_title](/just-the-docs/assets/images/jekyll/example-jekyll/first_version_site.jpg "theme_minima_title")
+![theme_minima_title]({{ site.url }}{{ site.baseurl }}/assets/images/jekyll/example-jekyll/first_version_site.jpg "theme_minima_title")
 
-![theme_minima_article](/just-the-docs/assets/images/jekyll/example-jekyll/jekyll_new_test_article.jpg "theme_minima_title_article")
+![theme_minima_article]({{ site.url }}{{ site.baseurl }}/assets/images/jekyll/example-jekyll/jekyll_new_test_article.jpg "theme_minima_title_article")
