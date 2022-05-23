@@ -95,6 +95,14 @@ ssh-keygen -t rsa -b 4096 -C "evgenvandev@gmail.com"
 
 ### Проверяем доступность ключа
 
+Проверка доступности ключа возникает при получении ошибки:
+
+```
+... Permission denied (publickey) - В доступе отказано
+```
+
+![Ошибка Permission denied (publickey)]({{ site.url }}{{ site.baseurl }}/assets/images/git/work-with-ssl-keys_permission-denied_publickey.jpg "Ошибка Permission denied (publickey)")
+
 Сначала проверяем доступность ключа командой:
 
 ```
