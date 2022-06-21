@@ -125,3 +125,103 @@ $ bundle exec just-the-docs rake search:init
 
 This command creates the `assets/js/zzzz-search-data.json` file that Jekyll uses to create your search index.
 Alternatively, you can create the file manually with [this content]({{ site.github.repository_url }}/blob/master/assets/js/zzzz-search-data.json).
+
+
+## Настройка поиска на русском языке
+
+Для поиска на сайте используем библиотеку [lunr.js](https://lunrjs.com/). Ссылка на [GitHub source](https://github.com/olivernn/lunr.js).
+
+### Подключение необходимых файлов в заголовке сайта
+
+Библиотека `lunr.js` подключается с помощью трёх файлов:
+
+1. `/assets/js/vendor/lunr.stemmer.support.js` - файл поддержки языков
+1. `/assets/js/vendor/lunr.ru.js` - файл поиска только для русского языка
+1. `/assets/js/vendor/lunr.multi.js` - файл поиска на нескольких языках одновременно, так как английский язык поиска используется по умолчанию
+
+Эти файлы подключаются в файле `/_includes/head.html` в строках 29-34:
+
+{% highlight html %}
+{% raw %}{% if site.search_enabled != false %}{% endraw %}
+    <script type="text/javascript" src="{{ '/assets/js/vendor/lunr.min.js' | relative_url }}"></script>
+    <script type="text/javascript" src="{{ '/assets/js/vendor/lunr.stemmer.support.js' | relative_url }}"></script>
+    <script type="text/javascript" src="{{ '/assets/js/vendor/lunr.ru.js' | relative_url }}"></script>
+    <script type="text/javascript" src="{{ '/assets/js/vendor/lunr.multi.js' | relative_url }}"></script>
+{% raw %}{% endif %}{% endraw %}
+{% endhighlight %}
+
+Соответственно сами файлы `lunr.stemmer.support.js`, `lunr.ru.js`, `lunr.multi.js` необходимо поместить в каталог `/assets/js/vendor/`.  
+Эти файлы можно скачать, [например, от сюда](https://github.com/MihaiValentin/lunr-languages).  
+[Инструкция поддержки поиска только для русского языка](https://github.com/MihaiValentin/lunr-languages#in-a-web-browser)  
+[Инструкция поддержки поиска для нескольких языков](https://github.com/MihaiValentin/lunr-languages#indexing-multi-language-content)
+
+### Инициализация скрипта `lunr.js`
+
+На данном сайте код инициализации скрипта `lunr.js` находится в файле `/assets/js/just-the-docs.js.html`, в строках 80-100:
+
+```javascript
+var index = lunr(function(){
+    this.ref('id');
+    this.field('title', { boost: 200 });
+    this.field('content', { boost: 2 });
+    {%- if site.search.rel_url != false %}
+    this.field('relUrl');
+    {%- endif %}
+    this.metadataWhitelist = ['position']
+
+    for (var i in docs) {
+        this.add({
+        id: i,
+        title: docs[i].title,
+        content: docs[i].content,
+        {%- if site.search.rel_url != false %}
+        relUrl: docs[i].relUrl
+        {%- endif %}
+        });
+    }
+});
+```
+
+Переменная `index` это индекс для поиска.  
+В начале функции записываем строку:
+
+```javascript
+this.use(lunr.multiLanguage('en', 'ru'));
+```
+
+Получаем:
+
+```javascript
+var index = lunr(function(){
+    // the reason "en" does not appear above is that "en" is built in into lunr js
+    // причина, по которой "en" не отображается выше, заключается в том, что "en" встроен в lunr js.
+    this.use(lunr.multiLanguage('en', 'ru'));
+    this.ref('id');
+    this.field('title', { boost: 200 });
+    this.field('content', { boost: 2 });
+    {%- if site.search.rel_url != false %}
+    this.field('relUrl');
+    {%- endif %}
+    this.metadataWhitelist = ['position']
+
+    for (var i in docs) {
+        this.add({
+        id: i,
+        title: docs[i].title,
+        content: docs[i].content,
+        {%- if site.search.rel_url != false %}
+        relUrl: docs[i].relUrl
+        {%- endif %}
+        });
+    }
+});
+```
+
+### Операторы дополнительного поиска `lunr.js`
+
+К вашей строке можно добавить операторы для уточнения поиска:
+
+- Подстановочные знаки (например, foo*, *oo)
+- Нечеткое совпадение, помогает с опечатками (например, foo~1)
+- Определенные поля (например, title:foo, text:1911)
+- Термин расширения (повышения) (например, foo^10)

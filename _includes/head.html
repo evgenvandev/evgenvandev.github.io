@@ -28,6 +28,9 @@
 
   {% if site.search_enabled != false %}
     <script type="text/javascript" src="{{ '/assets/js/vendor/lunr.min.js' | relative_url }}"></script>
+    <script type="text/javascript" src="{{ '/assets/js/vendor/lunr.stemmer.support.js' | relative_url }}"></script>
+    <script type="text/javascript" src="{{ '/assets/js/vendor/lunr.ru.js' | relative_url }}"></script>
+    <script type="text/javascript" src="{{ '/assets/js/vendor/lunr.multi.js' | relative_url }}"></script>
   {% endif %}
   <script type="text/javascript" src="{{ '/assets/js/just-the-docs.js' | relative_url }}"></script>
 

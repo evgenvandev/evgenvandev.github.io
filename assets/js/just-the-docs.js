@@ -78,6 +78,9 @@ function initSearch() {
       lunr.tokenizer.separator = {{ site.search.tokenizer_separator | default: site.search_tokenizer_separator | default: "/[\s\-/]+/" }}
 
       var index = lunr(function(){
+        // the reason "en" does not appear above is that "en" is built in into lunr js
+        // причина, по которой "en" не отображается выше, заключается в том, что "en" встроен в lunr js.
+        this.use(lunr.multiLanguage('en', 'ru'));
         this.ref('id');
         this.field('title', { boost: 200 });
         this.field('content', { boost: 2 });
