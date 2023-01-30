@@ -175,7 +175,7 @@ score = {visitors: 1, home: 1}; // Uncaught TypeError: Assignment to constant va
 
 ```javascript
 function funFact() {
-	isGloballyAvailable = true;
+  isGloballyAvailable = true;
 }
 
 funFact();
