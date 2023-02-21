@@ -21,7 +21,8 @@ description: Jekyll тема для документации
 baseurl: "" # the subpath of your site, e.g. /blog
 #url: "https://pmarsceill.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 #url: "https://evgenvandev.github.io"
-url: "https://progplane.tk"
+#url: "https://progplane.tk"
+url: "https://progplane.ru"
 
 permalink: pretty
 exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "package.json", "package-lock.json",  "script/", "LICENSE.txt", "lib/", "bin/", "README.md", "Rakefile"
