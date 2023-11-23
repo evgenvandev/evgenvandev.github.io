@@ -172,3 +172,18 @@ node listing_1-2.js
 
 ![Вывод программы listing_1-2.js в браузере]({{ site.url }}{{ site.baseurl }}/assets/images/node-js/node-js-tutorial/output_listing_1-2_in_browser.jpg "Вывод программы listing_1-2.js в браузере")
 
+Всё правильно, параметр `name` принял значение `burningbird`, поэтому из файла `phoenix5a.png` на страницу браузера загрузилось 
+изображение птицы феникс.   
+Теперь присвоим параметру `name` значение `Evgeny`, то есть в браузере вводим следующий адрес `http://localhost:8124?name=Evgeny`. 
+
+![Вывод программы listing_1-2.js в браузере. name=Evgeny]({{ site.url }}{{ site.baseurl }}/assets/images/node-js/node-js-tutorial/output_listing_1-2_in_browser-1.jpg "Вывод программы listing_1-2.js в браузере. name=Evgeny")
+
+Верно, появляется приветствие `Hello Evgeny`.   
+Дополнительного кода не так уж много, но между базовым приложением "Hello, World" и обновлённой версией существует ряд различий. 
+В начале кода в приложение включается новый модуль с именем `fs`, это модуль файловой системы (_File System_). При этом в программе 
+импортируется ещё один модуль, но не так, как два других: 
+
+```javascript
+var name = require('url').parse(req.url, true).query.name;
+```
+
